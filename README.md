@@ -1,1 +1,520 @@
-# Halaman-saya
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Man Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #eee9df;
+            color: #333;
+        }
+
+        header {
+            background-color: #514638;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        header h1 {
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #ddd2c1;
+        }
+
+        nav {
+            background-color: #76634e;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 16px 22px;
+            font-family: inherit;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover,
+        nav button.active {
+            background-color: #d6c4a8;
+            color: #382d20;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+            background-color: #fffdf8;
+            padding: 30px;
+            border: 1px solid #d5cbbd;
+            min-height: 400px;
+            animation: muncul 0.3s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #65523e;
+            border-bottom: 2px solid #c6b69e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #65523e;
+            margin: 15px 0 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .home-text {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .foto {
+            width: 200px;
+            height: 240px;
+            border: 3px solid #c6b69e;
+            background-color: #e9e2d7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #796b58;
+            overflow: hidden;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .biodata {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .biodata strong {
+            width: 140px;
+            flex-shrink: 0;
+            color: #65523e;
+        }
+
+        .item {
+            background: #f0eadd;
+            padding: 15px;
+            margin: 12px 0;
+            border-left: 4px solid #8b765c;
+        }
+
+        a {
+            color: #806044;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #514638;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            nav button {
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .page {
+                padding: 20px;
+            }
+
+            .home-content {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .biodata {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome</h1>
+    <p>Website Biodata dan Perkenalan Diri</p>
+</header>
+
+<!-- NAVIGASI HALAMAN -->
+<nav>
+    <button class="active" onclick="bukaHalaman('home', this)">Home</button>
+    <button onclick="bukaHalaman('about', this)">About</button>
+    <button onclick="bukaHalaman('pendidikan', this)">Pendidikan</button>
+    <button onclick="bukaHalaman('skills', this)">Skills</button>
+    <button onclick="bukaHalaman('materi', this)">Materi</button>
+    <button onclick="bukaHalaman('tentang', this)">Tentang</button>
+</nav>
+
+<div class="container">
+
+    <!-- HALAMAN HOME -->
+    <section id="home" class="page active">
+        <h2>Home</h2>
+
+        <div class="home-content">
+
+            <div class="home-text">
+                <h3>Halo, Selamat Datang!</h3>
+
+                <p>
+                    Perkenalkan, nama saya <b>Irwan</b>.
+                    Selamat datang di website personal saya.
+                </p>
+
+                <p>
+                    Website ini dibuat sebagai media perkenalan diri
+                    untuk mengenal saya lebih dekat, mulai dari
+                    biodata, pendidikan, kemampuan, hingga informasi
+                    mengenai diri saya.
+                </p>
+
+                <p>
+                    Terima kasih sudah berkunjung ke website saya.
+                    Semoga informasi yang tersedia dapat bermanfaat.
+                </p>
+            </div>
+
+            <!-- GANTI DENGAN FOTO KAMU -->
+            <div class="foto">
+                <img src="irwan
+.jpg" alt="Foto Saya">
+                <!--
+                Hapus span di atas jika sudah memasukkan foto.
+                Contoh:
+                <img src="irwan
+.jpg" alt="Foto Saya">
+                -->
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- HALAMAN ABOUT -->
+    <section id="about" class="page">
+        <h2>About Me</h2>
+
+        <div class="home-content">
+
+            <div class="foto">
+                <img src="irwan
+.jpg" alt="Foto Saya">
+                <!-- Masukkan foto kedua di sini -->
+            </div>
+
+            <div class="home-text">
+                <h3>Informasi Tentang Saya</h3>
+                <p>
+                    Berikut adalah informasi singkat mengenai
+                    identitas dan kehidupan pribadi saya.
+                </p>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="biodata">
+            <strong>Nama Lengkap</strong>
+            <span>: Muhammad Irwan Maulana</span>
+        </div>
+
+        <div class="biodata">
+            <strong>Nama Panggilan</strong>
+            <span>: Irwan</span>
+        </div>
+     
+        <div class="biodata">
+            <strong>Usia</strong>
+            <span>: 18 Tahun</span>
+        </div>
+
+        <div class="biodata">
+            <strong>Jenis Kelamin</strong>
+            <span>: Laki-laki </span>
+        </div>
+
+        <div class="biodata">
+            <strong>Hobi</strong>
+            <span>: Motor</span>
+        </div>
+
+        <div class="biodata">
+            <strong>Cita-cita</strong>
+            <span>: Rich man</span>
+        </div>
+
+        <div class="biodata">
+            <strong>Motto Hidup</strong>
+            <span>: Kesuksesan tidak datang secara instan, tetapi melalui proses.</span>
+        </div>
+    </section>
+
+
+   <!-- HALAMAN PENDIDIKAN -->
+    <section id="pendidikan" class="page">
+        <h2>Riwayat Pendidikan</h2>
+
+        <p>
+            Berikut merupakan riwayat pendidikan yang pernah
+            saya tempuh.
+        </p>
+
+        <div class="item">
+            <h3>Sekolah Dasar (SD)</h3>
+            <p>Nama Sekolah : SDN Rengasdengklok Selatan 4</p>
+            <p>Tahun : 2015-2021</p>
+        </div>
+
+        <div class="item">
+            <h3>Sekolah Menengah Pertama (SMP)</h3>
+            <p>Nama Sekolah : MTsN 5 Karawang</p>
+            <p>Tahun : 2021-2024</p>
+        </div>
+
+        <div class="item">
+            <h3>Sekolah Menengah Atas / Kejuruan</h3>
+            <p>Nama Sekolah : SMKN 1 RENGASDENGKLOK</p>
+            <p>Jurusan :  Teknik Jaringan Komputer Dan Telekomunikasi</p>
+            <p>Tahun : 2024-SEKARANG</p>
+        </div>
+
+        <div class="item">
+            <h3>Pendidikan Selanjutnya</h3>
+            <p>-</p>
+        </div>
+    </section
+
+    
+	<!-- HALAMAN SKILLS -->
+    <section id="skills" class="page">
+        <h2>My Skills</h2>
+
+        <p>
+            Berikut adalah beberapa kemampuan yang saya miliki
+            dan sedang saya pelajari.
+        </p>
+
+        <div class="item">
+            <h3>HTML</h3>
+            <p>Kemampuan membuat struktur halaman website.</p>
+        </div>
+
+        <div class="item">
+            <h3>CSS</h3>
+            <p>Kemampuan mengatur tampilan dan desain website.</p>
+        </div>
+
+        <div class="item">
+            <h3>Microsoft Office</h3>
+            <p>Menggunakan Word, Excel, dan PowerPoint.</p>
+        </div>     
+
+        <div class="item">
+            <h3>Otomotif skills</h3>
+            <p>Service, bore up, tune up, setting ecu</p>
+        </div>
+
+        <div class="item">
+            <h3>Soft Skills</h3>
+            <p>Komunikasi, kerja sama tim, dan tanggung jawab.</p>
+        </div>
+        
+	</section>
+
+
+    <!-- HALAMAN MATERI -->
+    <section id="materi" class="page">
+        <h2>Materi Pembelajaran</h2>
+
+        <p>
+            Halaman ini berisi kumpulan materi yang pernah saya
+            pelajari selama kegiatan pembelajaran.
+        </p>
+
+        <div class="item">
+            <h3>Materi 1 - HTML</h3>
+            <p>Pengenalan HTML dan dasar pembuatan website.</p>
+            <p>Status: [Sudah Dipelajari]</p>
+        </div>
+
+        <div class="item">
+            <h3>Materi 2 - CSS</h3>
+            <p>Mempelajari desain dan tampilan halaman website.</p>
+            <p>Status: [Sedang Dipelajari]</p>
+        </div>
+
+        <div class="item">
+            <h3>Materi 3 - JavaScript</h3>
+            <p>Mempelajari bahasa pemrograman JavaScript.</p>
+            <p>Status: [Belum Dipelajari]</p>
+        </div>
+
+        <div class="item">
+            <h3>Materi Tambahan</h3>
+            <p>Sedang menentukan;</p>
+        </div>
+    </section>
+
+
+    <!-- HALAMAN TENTANG -->
+    <section id="tentang" class="page">
+        <h2>Tentang Saya</h2>
+
+        <p>
+            Terima kasih telah mengunjungi website personal saya.
+            Jika ingin menghubungi atau mengenal saya lebih lanjut,
+            silakan gunakan informasi di bawah ini.
+        </p>
+
+        <div class="item">
+            <h3>Alamat</h3>
+            <p>Jl.Katalaya Rengasdengklok</p>
+        </div>
+
+        <div class="item">
+            <h3>WhatsApp</h3>
+            <p>
+                <a href="https://wa.me/6283873102511"
+                   target="_blank">
+                   Klik ini untuk menghubungi Whatsapp
+                </a>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>Email</h3>
+            <p>
+                <a href="mailto:irwanajah984@gmail.com">
+                    irwanajah984@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>Media Sosial</h3>
+            <p>
+                Instagram:
+                <a href="#" target="_blank">bimz666_</a>
+            </p>
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>Copyright &copy; 2026 Irwin the great</p>
+    <p>Dibuat oleh King Irwan</p>
+</footer>
+
+
+<!-- JAVASCRIPT UNTUK PINDAH HALAMAN -->
+<script>
+
+    function bukaHalaman(namaHalaman, tombol) {
+
+        // Ambil semua halaman
+        let halaman = document.querySelectorAll(".page");
+
+        // Sembunyikan semua halaman
+        halaman.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        // Tampilkan halaman yang dipilih
+        document.getElementById(namaHalaman)
+            .classList.add("active");
+
+        // Ambil semua tombol navigasi
+        let tombolNav = document.querySelectorAll("nav button");
+
+        // Hilangkan status aktif dari semua tombol
+        tombolNav.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        // Berikan status aktif ke tombol yang diklik
+        tombol.classList.add("active");
+
+        // Kembali ke bagian atas halaman
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+</script>
+
+</body>
+</html>
