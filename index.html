@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -174,6 +175,57 @@
             font-size: 13px;
         }
 
+        /* TAB MATERI */
+
+        .materi-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0;
+            border-bottom: 2px solid #c6b69e;
+            padding-bottom: 12px;
+        }
+
+        .materi-tabs button {
+            background-color: #e9e2d7;
+            color: #65523e;
+            border: 1px solid #c6b69e;
+            padding: 11px 17px;
+            font-family: inherit;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .materi-tabs button:hover,
+        .materi-tabs button.active {
+            background-color: #76634e;
+            color: white;
+        }
+
+        .materi-content {
+            display: none;
+            animation: muncul 0.3s ease;
+        }
+
+        .materi-content.active {
+            display: block;
+        }
+
+        .materi-content .item {
+            margin-top: 15px;
+        }
+
+        .status {
+            display: inline-block;
+            background-color: #e9e2d7;
+            color: #65523e;
+            padding: 7px 12px;
+            margin-top: 8px;
+            font-size: 13px;
+            border-left: 3px solid #8b765c;
+        }
+
         @media (max-width: 600px) {
             nav button {
                 padding: 12px;
@@ -193,6 +245,16 @@
                 flex-direction: column;
                 gap: 4px;
             }
+
+            .materi-tabs {
+                gap: 6px;
+            }
+
+            .materi-tabs button {
+                flex: 1 1 40%;
+                padding: 12px 8px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -204,24 +266,23 @@
     <p>Website Biodata dan Perkenalan Diri</p>
 </header>
 
-<!-- NAVIGASI HALAMAN -->
+<!-- NAVIGASI UTAMA -->
 <nav>
     <button class="active" onclick="bukaHalaman('home', this)">Home</button>
     <button onclick="bukaHalaman('about', this)">About</button>
     <button onclick="bukaHalaman('pendidikan', this)">Education</button>
     <button onclick="bukaHalaman('skills', this)">Skills</button>
-    <button onclick="bukaHalaman('materi', this)">materials</button>
+    <button onclick="bukaHalaman('materi', this)">Materials</button>
     <button onclick="bukaHalaman('tentang', this)">Contact</button>
 </nav>
 
 <div class="container">
 
-    <!-- HALAMAN HOME -->
+    <!-- HOME -->
     <section id="home" class="page active">
         <h2>Home</h2>
 
         <div class="home-content">
-
             <div class="home-text">
                 <h3>Halo, Selamat Datang!</h3>
 
@@ -243,32 +304,19 @@
                 </p>
             </div>
 
-            <!-- GANTI DENGAN FOTO KAMU -->
             <div class="foto">
-                <img src="irwan
-.jpg" alt="Foto Saya">
-                <!--
-                Hapus span di atas jika sudah memasukkan foto.
-                Contoh:
-                <img src="irwan
-.jpg" alt="Foto Saya">
-                -->
+                <img src="irwan.jpg" alt="Foto Saya">
             </div>
-
         </div>
     </section>
 
-
-    <!-- HALAMAN ABOUT -->
+    <!-- ABOUT -->
     <section id="about" class="page">
         <h2>About Me</h2>
 
         <div class="home-content">
-
             <div class="foto">
-                <img src="motor
-.jpg" alt="Foto Saya">
-                <!-- Masukkan foto kedua di sini -->
+                <img src="motor.jpg" alt="Foto Saya">
             </div>
 
             <div class="home-text">
@@ -278,7 +326,6 @@
                     identitas dan kehidupan pribadi saya.
                 </p>
             </div>
-
         </div>
 
         <br>
@@ -292,7 +339,7 @@
             <strong>Nama Panggilan</strong>
             <span>: Irwan</span>
         </div>
-     
+
         <div class="biodata">
             <strong>Usia</strong>
             <span>: 18 Tahun</span>
@@ -300,7 +347,7 @@
 
         <div class="biodata">
             <strong>Jenis Kelamin</strong>
-            <span>: Laki-laki </span>
+            <span>: Laki-laki</span>
         </div>
 
         <div class="biodata">
@@ -310,7 +357,7 @@
 
         <div class="biodata">
             <strong>Cita-cita</strong>
-            <span>: Rich man</span>
+            <span>: Rich Man</span>
         </div>
 
         <div class="biodata">
@@ -319,8 +366,7 @@
         </div>
     </section>
 
-
-   <!-- HALAMAN PENDIDIKAN -->
+    <!-- EDUCATION -->
     <section id="pendidikan" class="page">
         <h2>Educational Background</h2>
 
@@ -342,9 +388,9 @@
         </div>
 
         <div class="item">
-            <h3>Sekolah Menengah Atas / Kejuruan</h3>
+            <h3>Sekolah Menengah Kejuruan (SMK)</h3>
             <p>Nama Sekolah : SMKN 1 RENGASDENGKLOK</p>
-            <p>Jurusan :  Teknik Jaringan Komputer Dan Telekomunikasi</p>
+            <p>Jurusan : Teknik Jaringan Komputer dan Telekomunikasi</p>
             <p>Tahun : 2024-SEKARANG</p>
         </div>
 
@@ -352,10 +398,9 @@
             <h3>Pendidikan Selanjutnya</h3>
             <p>-</p>
         </div>
-    </section
+    </section>
 
-    
-	<!-- HALAMAN SKILLS -->
+    <!-- SKILLS -->
     <section id="skills" class="page">
         <h2>My Skills</h2>
 
@@ -377,58 +422,231 @@
         <div class="item">
             <h3>Microsoft Office</h3>
             <p>Menggunakan Word, Excel, dan PowerPoint.</p>
-        </div>     
+        </div>
 
         <div class="item">
-            <h3>Otomotif skills</h3>
-            <p>Service, bore up, tune up, setting ecu</p>
+            <h3>Otomotif Skills</h3>
+            <p>Service, bore up, tune up, setting ECU.</p>
         </div>
 
         <div class="item">
             <h3>Soft Skills</h3>
             <p>Komunikasi, kerja sama tim, dan tanggung jawab.</p>
         </div>
-        
-	</section>
-
-
-    <!-- HALAMAN MATERI -->
-    <section id="materi" class="page">
-        <h2>Learning materials</h2>
-
-        <p>
-            Halaman ini berisi kumpulan materi yang pernah saya
-            pelajari selama kegiatan pembelajaran.
-        </p>
-
-        <div class="item">
-            <h3>Materi 1 - HTML</h3>
-            <p>Pengenalan HTML dan dasar pembuatan website.</p>
-            <p>Status: [Sudah Dipelajari]</p>
-        </div>
-
-        <div class="item">
-            <h3>Materi 2 - CSS</h3>
-            <p>Mempelajari desain dan tampilan halaman website.</p>
-            <p>Status: [Sedang Dipelajari]</p>
-        </div>
-
-        <div class="item">
-            <h3>Materi 3 - JavaScript</h3>
-            <p>Mempelajari bahasa pemrograman JavaScript.</p>
-            <p>Status: [Belum Dipelajari]</p>
-        </div>
-
-        <div class="item">
-            <h3>Materi Tambahan</h3>
-            <p>Sedang menentukan;</p>
-        </div>
     </section>
 
+    <!-- LEARNING MATERIALS -->
+    <section id="materi" class="page">
 
-    <!-- HALAMAN TENTANG -->
+        <h2>Learning Materials</h2>
+
+        <p>
+            Berikut merupakan kumpulan materi pembelajaran
+            yang telah saya pelajari maupun yang akan saya pelajari
+            dalam bidang Teknik Komputer dan Jaringan.
+        </p>
+
+        <!-- TOMBOL TAB MATERI -->
+        <div class="materi-tabs">
+
+            <button class="active"
+                onclick="bukaMateri('html', this)">
+                HTML
+            </button>
+
+            <button
+                onclick="bukaMateri('css', this)">
+                CSS
+            </button>
+
+            <button
+                onclick="bukaMateri('javascript', this)">
+                JavaScript
+            </button>
+
+            <button
+                onclick="bukaMateri('tambahan', this)">
+                Materi Tambahan
+            </button>
+
+        </div>
+
+        <!-- MATERI HTML -->
+        <div id="html" class="materi-content active">
+
+            <h3>HTML (HyperText Markup Language)</h3>
+
+            <p>
+                HTML merupakan bahasa markup yang digunakan
+                untuk membuat struktur dasar sebuah website.
+                HTML berfungsi untuk menyusun berbagai elemen
+                seperti judul, paragraf, gambar, tabel, dan tautan.
+            </p>
+
+            <div class="item">
+                <h3>Fungsi HTML</h3>
+
+                <p>
+                    1. Membuat struktur halaman website.<br>
+                    2. Membuat judul dan paragraf.<br>
+                    3. Menampilkan gambar dan video.<br>
+                    4. Membuat tautan antar halaman.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Contoh Tag HTML</h3>
+
+                <p>
+                    &lt;h1&gt; digunakan untuk membuat judul.<br>
+                    &lt;p&gt; digunakan untuk membuat paragraf.<br>
+                    &lt;img&gt; digunakan untuk menampilkan gambar.<br>
+                    &lt;a&gt; digunakan untuk membuat tautan.
+                </p>
+            </div>
+
+            <div class="status">
+                Status: Sudah Dipelajari
+            </div>
+
+        </div>
+
+        <!-- MATERI CSS -->
+        <div id="css" class="materi-content">
+
+            <h3>CSS (Cascading Style Sheets)</h3>
+
+            <p>
+                CSS merupakan bahasa stylesheet yang digunakan
+                untuk mengatur tampilan dan desain sebuah website.
+                Dengan CSS, halaman website dapat terlihat lebih
+                menarik, rapi, dan nyaman untuk dilihat.
+            </p>
+
+            <div class="item">
+                <h3>Fungsi CSS</h3>
+
+                <p>
+                    1. Mengubah warna teks dan background.<br>
+                    2. Mengatur ukuran dan jenis tulisan.<br>
+                    3. Mengatur jarak antar elemen.<br>
+                    4. Mengatur posisi dan tata letak website.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Contoh Penggunaan CSS</h3>
+
+                <p>
+                    color: digunakan untuk mengubah warna teks.<br>
+                    background-color: mengatur warna latar belakang.<br>
+                    font-size: mengatur ukuran tulisan.<br>
+                    margin: mengatur jarak luar elemen.<br>
+                    padding: mengatur jarak dalam elemen.
+                </p>
+            </div>
+
+            <div class="status">
+                Status: Sedang Dipelajari
+            </div>
+
+        </div>
+
+        <!-- MATERI JAVASCRIPT -->
+        <div id="javascript" class="materi-content">
+
+            <h3>JavaScript</h3>
+
+            <p>
+                JavaScript merupakan bahasa pemrograman yang
+                digunakan untuk membuat website menjadi lebih
+                interaktif. JavaScript dapat digunakan untuk
+                menambahkan berbagai fungsi pada sebuah website.
+            </p>
+
+            <div class="item">
+                <h3>Fungsi JavaScript</h3>
+
+                <p>
+                    1. Membuat tombol yang dapat berfungsi.<br>
+                    2. Membuat menu navigasi interaktif.<br>
+                    3. Membuat animasi pada website.<br>
+                    4. Mengatur perubahan konten secara otomatis.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Alasan Belum Dipelajari</h3>
+
+                <p>
+                    Saya belum mempelajari JavaScript secara
+                    mendalam karena masih berfokus memahami
+                    dasar-dasar HTML dan CSS terlebih dahulu.
+                    Saya ingin menguasai struktur dan tampilan
+                    website sebelum mempelajari pemrograman
+                    yang lebih kompleks.
+                </p>
+            </div>
+
+            <div class="status">
+                Status: Belum Dipelajari Secara Mendalam
+            </div>
+
+        </div>
+
+        <!-- MATERI TAMBAHAN -->
+        <div id="tambahan" class="materi-content">
+
+            <h3>Materi Tambahan</h3>
+
+            <p>
+                Materi tambahan merupakan materi lanjutan
+                yang nantinya akan dipelajari untuk menambah
+                wawasan dan kemampuan di bidang Teknik
+                Komputer dan Jaringan.
+            </p>
+
+            <div class="item">
+                <h3>Rencana Pembelajaran</h3>
+
+                <p>
+                    Beberapa materi yang dapat dipelajari
+                    selanjutnya antara lain:
+                </p>
+
+                <p>
+                    1. JavaScript lanjutan.<br>
+                    2. Dasar-dasar PHP.<br>
+                    3. Database MySQL.<br>
+                    4. Pengembangan website.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Alasan Belum Ditentukan</h3>
+
+                <p>
+                    Saya belum menentukan materi tambahan
+                    karena masih ingin memahami dan memperdalam
+                    materi dasar yang sudah dipelajari.
+                    Setelah menguasai materi tersebut,
+                    saya akan menentukan materi lanjutan
+                    yang sesuai dengan kebutuhan dan kemampuan saya.
+                </p>
+            </div>
+
+            <div class="status">
+                Status: Belum Ditentukan
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
     <section id="tentang" class="page">
-        <h2>Contact me</h2>
+
+        <h2>Contact Me</h2>
 
         <p>
             Terima kasih telah mengunjungi website personal saya.
@@ -446,7 +664,7 @@
             <p>
                 <a href="https://wa.me/6283873102511"
                    target="_blank">
-                   Klik ini untuk menghubungi Whatsapp
+                   Klik ini untuk menghubungi WhatsApp
                 </a>
             </p>
         </div>
@@ -477,40 +695,60 @@
     <p>Dibuat oleh King Irwan</p>
 </footer>
 
-
-<!-- JAVASCRIPT UNTUK PINDAH HALAMAN -->
 <script>
 
+    // JAVASCRIPT NAVIGASI UTAMA
     function bukaHalaman(namaHalaman, tombol) {
 
-        // Ambil semua halaman
         let halaman = document.querySelectorAll(".page");
 
-        // Sembunyikan semua halaman
         halaman.forEach(function(item) {
             item.classList.remove("active");
         });
 
-        // Tampilkan halaman yang dipilih
         document.getElementById(namaHalaman)
             .classList.add("active");
 
-        // Ambil semua tombol navigasi
         let tombolNav = document.querySelectorAll("nav button");
 
-        // Hilangkan status aktif dari semua tombol
         tombolNav.forEach(function(item) {
             item.classList.remove("active");
         });
 
-        // Berikan status aktif ke tombol yang diklik
         tombol.classList.add("active");
 
-        // Kembali ke bagian atas halaman
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
+    }
+
+
+    // JAVASCRIPT TAB MATERI
+    function bukaMateri(namaMateri, tombol) {
+
+        // Mengambil semua konten materi
+        let materi = document.querySelectorAll(".materi-content");
+
+        // Menyembunyikan semua materi
+        materi.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        // Menampilkan materi yang dipilih
+        document.getElementById(namaMateri)
+            .classList.add("active");
+
+        // Mengambil semua tombol materi
+        let tombolMateri = document.querySelectorAll(".materi-tabs button");
+
+        // Menghapus status aktif semua tombol
+        tombolMateri.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        // Mengaktifkan tombol yang diklik
+        tombol.classList.add("active");
 
     }
 
